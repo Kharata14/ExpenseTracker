@@ -1,0 +1,14 @@
+﻿version: '3.8'
+
+services:
+  redis-cache:
+    container_name: redis-cache
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - expense-network
+
+networks:
+  expense-network:
+    driver: bridge
